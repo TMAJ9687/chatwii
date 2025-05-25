@@ -1,1 +1,16 @@
+name: Supabase Media Cleanup (Scheduled)
 
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # Every 10 minutes (UTC)
+  workflow_dispatch:        # Allows manual run from GitHub UI
+
+jobs:
+  call-supabase-function:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Supabase deleteExpiredMessageMedia Function
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            ${{ secrets.SUPABASE_MEDIA_CLEANUP_URL }}
