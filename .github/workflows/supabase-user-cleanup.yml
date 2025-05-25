@@ -1,0 +1,17 @@
+name: Supabase User Cleanup (Scheduled)
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # Every 15 minutes (UTC)
+  workflow_dispatch:
+
+jobs:
+  call-supabase-function:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Supabase deleteUser Function
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}" \
+            ${{ secrets.SUPABASE_USER_CLEANUP_URL }}
