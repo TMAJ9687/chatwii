@@ -13,4 +13,5 @@ jobs:
         run: |
           curl -X POST \
             -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}" \
             ${{ secrets.SUPABASE_MEDIA_CLEANUP_URL }}
