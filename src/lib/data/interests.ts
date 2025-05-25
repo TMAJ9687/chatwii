@@ -1,0 +1,23 @@
+export const interestsList = [
+    'Music',
+    'Movies',
+    'Sports',
+    'Travel',
+    'Books',
+    'Art',
+    'Technology',
+    'Gaming',
+    'Fitness',
+    'Cooking',
+    'Outdoors',
+    'Fashion',
+    'Science',
+    'History',
+    'Photography',
+    'Writing',
+    'Dancing',
+    'DIY',
+    'Animals',
+    'Cars',
+    // ...add more as needed
+  ];
